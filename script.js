@@ -38,3 +38,9 @@ function displayPlantList(plantData) {
 
   plantListSection.innerHTML = plantCards;
 }
+const plants = [
+  { name: 'Rose', type: 'Flower' },
+  { name: 'Lavender', type: 'Herb' },
+  { name: 'Snake Plant', type: 'Indoor' },
+  // Add more plant objects as needed
+];
