@@ -44,3 +44,30 @@ const plants = [
   { name: 'Snake Plant', type: 'Indoor' },
   // Add more plant objects as needed
 ];
+function displayPlantList(plants) {
+  const plantListSection = document.querySelector('.plant-list');
+  if (!plantListSection) {
+    console.error('Plant list section not found.');
+    return;
+  }
+
+  if (!plants || plants.length === 0) {
+    plantListSection.innerHTML = '<p>No plants found.</p>';
+    return;
+  }
+
+  const plantCards = plants.map(plant => {
+    return `
+      <div class="plant-card">
+        <h2>${plant.name}</h2>
+        <p>Type: ${plant.type}</p>
+        <!-- Other plant details can go here -->
+      </div>
+    `;
+  }).join('');
+
+  plantListSection.innerHTML = plantCards;
+}
+
+// Call the function with the plants array to display the plant list
+displayPlantList(plants);
